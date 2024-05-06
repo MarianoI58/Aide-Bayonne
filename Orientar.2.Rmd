@@ -14,9 +14,8 @@ library(DT)
 library(leaflet)
 library(pandoc)
 library(bslib)
-library(rsconnect)
 library(shiny)
-#.bs4-brght{background-color: $cyan; color: $orange;}
+
 ```
 
 
