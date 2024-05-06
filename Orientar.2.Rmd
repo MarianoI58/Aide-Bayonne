@@ -1,0 +1,1534 @@
+---
+title: "DROIT À..."
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+  runtime: shiny
+---   
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(DT)
+library(leaflet)
+library(pandoc)
+library(bslib)
+library(rsconnect)
+library(shiny)
+#.bs4-brght{background-color: $cyan; color: $orange;}
+```
+
+
+#   
+
+
+
+
+   
+[ETRE ACCUEILLI](#etre-accueilli) 
+
+[SE SOIGNER](#se-soigner)          
+
+
+[S'ALIMENTER](#salimenter)   
+
+[SE FINANCER](#se-financer)   
+
+[SE VETIR](#se-vetir)   
+
+[TRAVAILLER](#travailler)   
+
+
+[OBTENIR LE DROIT AU SEJOUR](#sejour)   
+
+
+[DORMIR ET SE LOGER](#dormir-se-loger)   
+
+
+[SE FORMER](#se-former)   
+
+
+[Adresses Utiles](#adresses-utiles)     
+
+
+[Glossaire](#glossaire)  
+
+[Le Secours Catholique dans la Région](#secours-catholique-au-pays-basque)
+ 
+## Les droits de l'homme {data-width=800}  
+
+**Quelques articles sur La Déclaration universelle des droits de l'homme**     
+
+
+Article 2
+ 
+1. Chacun peut se prévaloir de tous les droits et de toutes les libertés proclamés dans la présente Déclaration, sans distinction aucune, notamment de race, de couleur, de sexe, de langue, de religion, d'opinion politique ou de toute autre opinion, d'origine nationale ou sociale, de fortune, de naissance ou de toute autre situation.
+2. De plus, il ne sera fait aucune distinction fondée sur le statut politique, juridique ou international du pays ou du territoire dont une personne est ressortissante, que ce pays ou territoire soit indépendant, sous tutelle, non autonome ou soumis à une limitation quelconque de souveraineté.
+
+Article 3
+ 
+Tout individu a droit à la vie, à la liberté et à la sûreté de sa personne.
+
+Article 13
+ 
+1. Toute personne a le droit de circuler librement et de choisir sa résidence à l'intérieur d'un Etat. 
+2. Toute personne a le droit de quitter tout pays, y compris le sien, et de revenir dans son pays.
+
+Article 14
+ 
+1. Devant la persécution, toute personne a le droit de chercher asile et de bénéficier de l'asile en d'autres pays. 
+
+Article 23
+ 
+1. Toute personne a droit au travail, au libre choix de son travail, à des conditions équitables et satisfaisantes de travail et à la protection contre le chômage. 
+2. Tous ont droit, sans aucune discrimination, à un salaire égal pour un travail égal. 
+
+Article 25
+ 
+1. Toute personne a droit à un niveau de vie suffisant pour assurer sa santé, son bien-être et ceux de sa famille, notamment pour l'alimentation, l'habillement, le logement, les soins médicaux ainsi que pour les services sociaux nécessaires ; elle a droit à la sécurité en cas de chômage, de maladie, d'invalidité, de veuvage, de vieillesse ou dans les autres cas de perte de ses moyens de subsistance par suite de circonstances indépendantes de sa volonté.       
+
+Article 26.     
+ 
+1. Toute personne a droit à l'éducation. L'éducation doit être gratuite, au moins en ce qui concerne l'enseignement élémentaire et fondamental. L'enseignement élémentaire est obligatoire. L'enseignement technique et professionnel doit être généralisé ; l'accès aux études supérieures doit être ouvert en pleine égalité à tous en fonction de leur mérite.    
+
+
+**ETRE ACCUEILLI** {data-orientation=rows}
+============================================================================
+
+
+## fila {data-height=500} 
+
+
+### ***Lieux d'accueil*** pour les persones que suffrent la précarité  {data-width=200}
+
+
+Trois centres d'accueil de jour à Bayonne et Biarriz:       
+   *  **Le Secours Catholique**,      
+   *  **Le P.A.J.**,      
+   *  **ZUREKIN Accueil du Jour**        
+**L'objectif**      
+Accueillir des personnes en situation precaire pour qu'elle trouvent un lieu où se reposer, boir un café, parler,...
+<br>
+<br/>
+**Services Communs**               
+ -- Boissons chaudes et froides,       
+ -- Collations,      
+ --  Douches,       
+ --  Orientation et conseil,  
+ --  Coiffeur,   
+ --  Bagagerie.    
+
+### Placement des lieux d'Accueil Jour {data-width=800 data-height=500}
+
+```{r}
+library(leaflet)
+#library(rJava)
+#library(OpenStreetMap)
+library(tidyverse)
+
+SCPAJ<-leaflet()%>%
+        addTiles()%>%
+         addMarkers(lng=-1.4648943087937145, lat=43.4957, popup="Secours Catholique, 9 rue Daniel Argote")%>%
+                   addMarkers(  lng=-1.4724051167301637, lat= 43.495998177, popup= "P.A.J., 9 quai de Lesseps") %>%
+                      addMarkers(  lng= -1.55623174371548, lat= 43.473976987550564, popup= "ZUEKIN, Accueil du Jour,6 All. Chanoine Pierre Manterola")
+SCPAJ
+
+```
+
+## row {data-width=300 data-height=200}
+
+###  **Le Secours Catholique** 
+
+
+
+
+  **Adresse**   
+9 rue Daniel Argote  64100 Bayonne       
+  tél: 0559554098       
+  **Autres Services**       
+ [Services  du Secours Catholique dans la région](#dans-la-region)      
+ -- Vestiaires,       
+ --  Adressage,         
+ --  Bagagerie,  
+ -- Micro-credits.  
+ -- Apprentissage du Francais   
+ -- Infirmiere PASS et psicologue (une fois par semaine).    
+ email:william.lopez@secours-catholique.org. 
+  [WEB](https://www.secours-catholique.org/ "Secours Catholique")  
+    
+----------------------------------------------   
+
+### **Le  P.A.J.**   
+  
+  **Adresse**    
+9 quai de Lesseps 64100 Bayonne.    
+  
+[WEB](https://pajbab.fr/ "P.A.J.")
+
+**Autres Services**               
+ +    Machine à laver,   
+ +     Bagagerie
+ 
+--------------------------------------------------   
+ 
+### **ZUEKIN Accueil du Jour**     
+   
+  **Adresse**      
+6 All. Chanoine Pierre Manterola, 64200 Biarritz  
+0559249519.  
+
+**Autres Services**       
+
+ +    Machine à laver,   
+ +    Aide des Travailleurs Sauciaux (Atherbea)  
+ +    Thèatre 
+ 
+------------------------------------------------ 
+ 
+ 
+ 
+## row {data-width=300 data-height=300}
+
+### **Horaire d'ouverture**
+```{r, echo=FALSE, warning=FALSE}
+library(reactable)
+perma<- read.csv2("permanences.csv")
+library(flextable)
+#sc<-flextable((perma[1:6,2:4]))
+#sc<-set_table_properties(sc, align = "right", layout = "autofit")
+#sc
+reactable(perma[1:6,2:3])
+
+
+```
+
+
+### **Horaire d'ouverture**
+```{r, echo=FALSE, warning=FALSE}
+
+#perma<- read_csv2("permanences.csv")
+library(flextable)
+#paj<-flextable((perma[8:14,2:4]))
+#paj<-set_table_properties(paj, align = "right", layout = "autofit")
+#paj
+
+reactable(perma[8:14,2:4])
+```
+
+
+### **Horaire d'ouverture**
+```{r, echo=FALSE, warning=FALSE}
+
+#permaZu<- read_csv2("permanences.csv")
+library(flextable)
+#zu<-flextable(perma[15:20,2:4])
+#zu<-set_table_properties(zu, align = "right", layout = "autofit")
+#zu
+reactable(perma[15:20,2:4])
+```
+
+
+
+   
+**SE SOIGNER**        
+============================================================================   
+
+ 
+## columna mapa {data-width=50%}
+### Carte interactive {data-height=80%}
+
+```{r}
+library(leaflet)
+#library(rJava)
+#library(OpenStreetMap)
+library(tidyverse)
+leaflet()%>%
+        addTiles()%>%
+         addMarkers(lng=-1.4646053320747392, lat=43.48447396658166, popup="Site De Cam De Prat. Hospital Center De La Côte Basque, Av. de Cam de Prats")%>%
+                      
+                   addMarkers(  lng=-1.47775, lat= 43.48994, popup= "Consultation dentaire 19 rue de Luc")%>%
+                        addMarkers(  lng=-1.5018494455666505, lat= 43.487179409824456, popup= "Association Addictions France - CSAPA d'Anglet, 25 Av. Jean Léon Laporte, Anglet")%>%
+                          addMarkers(  lng= -1.4675483185823743, lat= 43.49016921725682, popup= "Association Addictions France- CAARUD Bayonne. 3 Av. Duvergier de Hauranne, Bayonne")%>%
+                              addMarkers(  lng=-1.477922032220407, lat= 43.48207805662562, popup= "EMOA, 13 Av. de l'Interne Jacques Loeb")
+                            
+
+
+
+```
+
+
+
+
+
+ 
+
+
+
+
+ columna 2 {data-width=35% .tabset}
+--------------------------------------------------------------------------------
+
+
+### Urgence dentaire {.tabset .tabset-fade}    
+
+**Permanence de « Soins Dentaires d’Urgence»**      
+Dispensaire de l’Ordre de Malte en partenariat avec l'Hopital de Bayonne.
+<br/>
+Av. de Cam de Prats, 64100 Bayonne,
+
+tél: 0559443535
+
+<br/>
+
+**Conditions d'accueil:**  
+Elle s’adresse aux personnes sans couverture sociale ou avec couverture sociale incomplète.
+Possibilité de recevoir 10 personnes par permanence pour soins d’urgence (carie, arrachage, radio, délivrance d’antibiotiques). 
+                       
+**Info aux bénévoles**  
+<br>
+Lorsqu’un accueilli se plaint de problème dentaire, s’il ne dispose pas de couverture complète, on peut prendre RV pour lui en précisant ses nom, prénom, date de naissance et numéro de téléphone, en appelant au numéro affiché  ou en s’adressant directement à Raymond.   
+
+**Permanences:**   
+les mardi et jeudi après-midi (médecine générale et un peu d’ophtalmologie).
+
+
+<br/>
+<br/>
+
+<br/>
+
+<br/>
+
+
+
+
+### Urgence medicale {.tabset .tabset-fade}     
+
+
+Pour les personnes qui non pas de protection social ou qui ont des difficultés financieres, 
+il existe <strong>Les Permanences d’Accès aux Soins de Santé (PASS) </strong> pour une prise en charge médico-sociale.<br>
+
+Les Pass sont implantées au sein des hôpitaux, et donnent un accès à des consultations de médecine générale ou spécialisées non facturées.
+<br> Selon les situations, la délivrance de traitements et l’accès au plateau technique de l’hôpital peut être possible (consultations spécialisées, service d’imagerie, laboratoire).   
+**La PASS propose :**   
+         -- Une permanence médicale sans prise de rendez-vous : soins médicaux, traitements, consultation dentaire,    
+         -- Une permanence sociale : ouverture des droits, accompagnement social,    
+         -- Une permanence infirmière : soins infirmiers, éducation thérapeutique, prévention".     
+        
+        
+**Permanence Médicale Tél. : 05.59.44.43.90:**        
+              *Lundi et Mercredi 9H00-16H30,    
+              *Le matin : sans rendez-vous,   
+              *Les après-midis sur rendez-vous,   
+              *Vendredi de 9H00-12H00 (sans rendez-vous),   
+        
+**Permanence Infirmière Tél. :05.59.44.43.81:**   
+              * du lundi au vendredi de 9H à 16H30,  
+              * et sur les lieux d’accueil (PASS mobile),                                  
+              * Permanence sociale (Tél. : 05 59 44 43 84).  
+
+
+### Urgence addictions {.tabset .tabset-fade}   
+**CAARUD**  Centre d’Accueil et d’Accompagnement à la Réduction des Risques pour les Usagers de Drogues     
+3 Avenue Duvergier de Hauranne
+64100 Bayonne
+
+tél: 05 59 46 31 13
+
+e-mail: caarud.bayonne@addictions-france.org   
+<https://addictions-france.org/>     
+  
+
+INFORMATIONS PRATIQUES :   
+Accueil individuel sur rendez-vous.   
+
+
+Accueil collectif :
+```{r}
+reactable(perma[22:24,2:3])
+```
+
+Accueil collectif les lundis, mercredis et vendredis de 9h à 12h
+
+
+
+Maraudes les lundis et mardis matin
+
+ 
+
+**SERVICES :**
+
+Soin, réduction des risques, TROD
+
+Accompagnement social et médical, soins infirmiers
+
+______________________________________________________ 
+
+**CSAPA d'Anglet**
+
+25 Avenue Jean Léon Laporte
+
+64600 Anglet
+
+ 05 59 63 63 63
+
+ na64pb@addictions-france.org
+
+ <http://www.anpaa.asso.fr/>
+Centre de Soins, d’Accompagnement et de Prévention en Addictologie
+ 
+
+**INFORMATIONS PRATIQUES :**
+
+Accueil téléphonique de 9h30 à 17h
+
+Ouverture au public :
+ * lundi de 9h à 17h
+ * mardi de 9h à 20h
+ * mercredi de 9h à 19h
+ * jeudi de 9h à 19h
+ * vendredi de 9h à 16h
+
+**SERVICES :**
+
+Soin, accompagnement entourage, consultations jeunes consommateurs, sevrage, réduction des risques et des dommages
+
+Atelier et groupes d’expression (écriture, film, senteur…)
+
+TROD
+
+
+### Urgence Psicologique {.tabset .tabset-fade}    
+
+**EQUIPE MOBILE D'ACCÈS AUX SOINS PSYCHOLOGIQUES** 
+E.M.O.A.Ψ
+
+CENTRE HOSPITALIER DE LA CÔTE BASQUE
+13 avenue de l'interne Jacques Loëb
+
+tél : 05 59 44 35 35.  
+
+---
+<https://www.ch-cote-basque.fr/offre-de-soins/psychiatrie/206-emoaps>   
+
+---
+
+L'équipe Mobile d'accès aux Soins Psychologiques (E.M.O.A.Ψ), actuellement localisée dans le bâtiment Zabal, est composée de 4 infirmières, d'un cadre infirmier d'une infirmière en pratique avancée  et d’un médecin psychiatre.   
+EMOAΨ est en lien les acteurs médico-sociaux de première ligne auprès desquels elle assure un rôle d'écoute et de soutien, individuel ou collectif, en présentiel ou par téléphone.   
+
+**SERVICES :**   
+L'équipe a pour mission de faciliter l'accès aux soins en santé mentale des personnes qui, de par leur situation de précarité, sont, soit en rupture de soins, soit ne peuvent y accéder.
+
+
+
+Elle a assure également auprès du public concerné un rôle de prévention, d'évaluation  et, si nécessaire, d’accompagnement vers les services de soins psychiatriques.   
+
+ 
+**S'ALIMENTER**  
+====================================================================================================
+## columna mapa {data-width=65%}
+### Carte interactive
+
+```{r}
+library(leaflet)
+#library(rJava)
+#library(OpenStreetMap)
+library(tidyverse)
+leaflet()%>%
+        addTiles()%>%
+         addMarkers(lng= -1.4499591744028384, lat=43.483467815795215, popup="La Banque Alimentaire, 80 Chem. de Frais, 64100 Bayonne")%>%
+                      
+                   addMarkers(  lng=-1.480454072550053, lat= 43.50069125963031, popup= "La Table du soir, Chem. de Saint-Bernard, 64100 Bayonne")%>%
+                       addMarkers(  lng=-1.5039633258568614, lat= 43.52565074115493, popup= "Les Restos du Coeur. 41 Rue de Jouanetote, 64600 Anglet")%>%
+                           addMarkers(  lng=-1.5097398941780673, lat= 43.49388780138372,  popup= "L'Epicerie Sociale D'Anglet Association, 41 Rue de Jouanetote, 64600 Anglet")%>%
+                       
+                           addMarkers(  lng= -1.4899162099003034, lat= 43.499449193767325,   popup= "CROIX ROUGE 58 All. Marines, 64100 Bayonne")
+
+                  
+ 
+```
+
+
+
+ columna 2 {data-width=35% .tabset}
+--------------------------------------------------------------------------------
+
+
+### La Table du soir {data-width="350"}
+La Table du soir, Chem. de Saint-Bernard, 64100 Bayonne
+
+0559597761
+
+
+
+
+
+
+### La banque alimentaire
+La Banque Alimentaire, 80 Chem. de Frais, 64100 Bayonne
+
+0559552811
+<https://babayonne.banquealimentaire.org/>. 
+
+### l'Episerie Sociale
+L'Epicerie Sociale D'Anglet Association 
+41 Rue de Jouanetote, 64600 Anglet
+
+0559747343
+
+### Les Resto du Coeur
+Les Restos du Coeur. 41 Rue de Jouanetote, 64600 Anglet, Francia"
+
+0559522715
+
+<https://ad64.restosducoeur.org/centres-departementaux/centre-dactivites-anglet/>
+
+
+**SE FINANCER**
+===============================================================================
+
+## columna mapa {data-width=65%}
+
+### Carte interactive     
+```{r}
+
+leaflet()%>%
+        addTiles()%>%
+         addMarkers(lng=-1.4648943087937145, lat=43.4957, popup="Secours Catholique, 9 rue Daniel Argote")%>%
+                      
+                   addMarkers(  lng=-1.4558167372614172, lat=  43.4994054408999, popup= "CCAS 30 Pl. des Gascons, 64100 Bayonne")
+        
+
+```
+
+ columna 2 {data-width=35% .tabset} 
+-----------------------------------------------------------------------------
+
+### Micro-credit     
+    
+![](micro1.png){width=50%}
+
+
+
+### Aide Economique du Secours Catholique  
+
+Pour recevoir une aide d'urgence du Secours Catholique pour les personnes ou menages se retrouvent en grande difficulté en cas de "coup dur" comme la perte d’un emploi, un accident de santé, une catastrophe naturelle qui les touche, un changement de situation familiale ou juste, parfois, une dépense imprévue comme la réparation d’un véhicule, i existe une aide d'urgence attribuée par une commission. Pour cela,  il es necessaire de rencontrer un assistante sociale du CCAS qui trasnmettra un avis.
+L'aide d'urgence répond également aux besoins urgents des ménages vivant dans des situations d’extrême pauvreté, comme les personnes à la rue. Ces aides financières et matérielles sont souvent une première étape. Dans la durée, l’association propose à ces ménages de les accompagner vers l'accès à leurs droits, en les informant et en les soutenant dans leurs démarches.
+
+
+
+
+
+### CCAS et RSA   
+
+**CCAS**   
+ 30 place des Gascons
+64100 Bayonne   
+Tél. :  +33 5 59 50 67 50   
+
+
+
+Siège du CCAS : ouvert au public de 9h à 12h (2 guichets) pour les bons de transport, la domiciliation et la carte Déclic (uniquement sur rendez-vous : cartedeclic.bayonne.fr), et de 13h30 à 17h (1 guichet et accueil extérieur) pour la domiciliation.   
+	* Service social RSA : sur rendez-vous au 05 59 50 50 80   
+	* Épicerie sociale : sur rendez-vous au 05 59 50 67 38   
+	* Microcrédit : sur rendez-vous au 05 59 50 50 77   
+	* Portage de repas à domicile : renseignements et commandes au 05 59 50 50 96 ou  par courriel   
+	* Service d’aide et d’accompagnement à domicile : au 05 59 50 67 50   
+  * Service mandataire d’aide à domicile : contact au 05 59 50 67 31   
+	* Atelier Santé Ville, promotion de la santé : contact au 05 59 50 50 74   
+	* Programme de Réussite Éducative : sur rendez-vous au 05 59 50 50 82   
+	Les permanences des organismes extérieurs (mutuelle pour tous, accompagnement à la parentalité) sont maintenues.   
+	
+**Aide economique d'urgence**   	
+Le conseil d'administration du CCAS a créé différents types de secours en fonction de ses priorités et des besoins de la population.
+Ces aides peuvent être délivrées sous différentes formes : chèque d'accompagnement personnalisé, numéraires ou paiement à un tiers… et concernent les domaines d'intervention suivant : la subsistance, le soutien à l'énergie, l'aide aux séjours vacances, les aides à la personne handicapée, les relogements suite à sinistre…
+
+Toute demande doit être effectuée par un travailleur social (conseil départemental, CCAS, CAF, etc.)
+
+Renseignements : 05 59 50 50 98
+
+**Aides au transport**   
+Le CCAS accorde à ses usagers des réductions tarifaires sur le réseau des transports en commun de la Communauté d’Agglomération Pays basque.
+
+Selon lasituation et la nature des revenus, sur présentation de justificatifs, on peut acquérir ces titres de transport (abonnements et tickets mensuels) dans : 30, place des Gascons.
+
+Cette aide s'adresse aux bénéficiaires suivants :
+
+* Demandeurs d’emploi résidant sur Bayonne dont les revenus sont égaux ou inférieurs au SMIC
+* Bénéficiaires de l’Allocation Adulte Handicapée ou d’une pension d’invalidité n’exerçant pas une activité professionnelle, en milieu ouvert ou protégé
+* Personnes inscrites dans le dispositif RSA
+* Personnes bénéficiaires de la CMU
+* Personnes en situation de demande d’asile politique sur présentation d’un justificatif du centre Atherbéa
+* Personnes du 3e âge, non imposables et selon un barème défini par la Ville de Bayonne
+Renseignements : 05 59 50 67 46
+	
+**Conditions pour avoir droit au RSA**   
+
+* Etre âgé d'au moins 25 ans,    
+* Résider en France de manière stable et effective,   
+* Avoir droit de séjour en France et y vivre depuis au moins 3 mois au moment de la demande,   
+* Etre inscrite à France Travail au plus tard le 1er janvier 2025,   
+* Signer un contrat d'engagement comportant un plan d'actions précisant ses objectifs d'insertion sociale et professionnelle.   
+	
+
+
+
+**SE VETIR**   
+===============================================================================
+## columna mapa {data-width=65%}
+
+### Carte interactive     
+
+
+ columna 2 {data-width=35% .tabset}
+--------------------------------------------------------------------------------
+### Magasin Croix Rouge
+
+### Vestiaire Secour Catholique
+
+
+**TAVAILLER**      
+=============================================================================
+## columna mapa {data-width=65%}
+
+
+### Carte interactive     
+
+
+ columna 2 {data-width=35% .tabset}
+--------------------------------------------------------------------------------
+### Faire son C.V.
+
+### Domiciliation et Adressage
+
+
+### Compte en Banque
+
+
+**SEJOUR**
+===============================================================================
+
+## columna mapa {data-width=65%}
+
+### Carte interactive     
+
+
+```{r}
+library(leaflet)
+#library(rJava)
+#library(OpenStreetMap)
+library(tidyverse)
+leaflet()%>%
+        addTiles()%>%
+         addMarkers(lng= -1.4716776691654982 , lat=43.4850301917625,   popup="ETORKINEKIN B.A.B., 11 All. de Glain, 64100 Bayonne")%>%
+                      
+                   addMarkers(  lng=-1.4679197504395374, lat= 43.495233837381065, popup= "CIMADE, 26 Rue Sainte-Catherine, 64100 Bayonne")
+                      
+```
+
+ columna 2 {data-width=35% .tabset}
+--------------------------------------------------------------------------------
+### Aide pour la demande d'asile : La CIMADE
+CIMADE    
+26 Rue Sainte-Catherine, 64100 Bayonne   
+
+Tél : +33757405411.      
+accueil sur rendez-vous
+   
+Bayonne : 09 77 46 92 13
+   
+bayonne@lacimade.org.  
+
+
+[WEB](https://www.lacimade.org/)
+
+**Actions**      
+            * Droit de sejour : Conseiller et accompagner des personnes étrangères dans leurs démarches pour accéder à un titre de séjour en France est au cœur de l’activité de la CIMADE.     
+            * Doit d'asile : Conseiller et accompagner des personnes étrangères dans leurs démarches pour demander asile en France.      
+            * Rétention et expulsion : La Cimade intervient dans 8 centres de rétention afin d’y assurer un accompagnement humain des personnes enfermées et de les aider dans l’exercice de leurs droits. Elle offre également une aide à des personnes qui font l’objet d’assignation à résidence et des mesures d’expulsion expéditives.   
+            * Informer en prison : informer les personnes de leurs droits, de les assister dans les démarches supposées par leur situation et de porter témoignage des conditions de détention des personnes étrangères détenues dont les droits ne sont pas respectés.       
+            * Faire respecter les droits de enfants et femmes  etrangeres en denger  ou victimes de la violence.       
+            * Aide pour l'apprentissage du francais.  
+
+### Aide aux demarches d'integration : ETORKINEKIN BAB     
+
+ETORKINEKIN B.A.B.,    
+11 All. de Glain, 64100 Bayonne
+
+
+ETORKINEKIN participe à accueillir , soutenir et héberger des migrants.
+
+
+
+**ACTIONS***
+
+           - démarches d'accès à l'aide alimentaire
+
+           - démarches d'accès à la santé (soins, dossier d'Aide Médicale d'Etat…)
+
+           - démarches d'accès à l'éducation (inscription dans des établissements scolaires, recherche               d'apprentissage)
+
+           - aide à l'intégration : bénévolat dans des associations, pratique d'une activité sportive, culturelle 
+
+           - soutien scolaire, apprentissage ou perfectionnement en français
+
+           - hébergement de jeunes dans des familles et d'adultes dans des logements mis à disposition ou loués,     
+           - Intervention en urgence auprès de mineur.e.s  et de familles exilées à la rue.
+
+
+
+
+
+
+**DORMIR SE LOGER**   
+===============================================================================
+
+## columna mapa {data-width=65%}
+
+### Carte interactive       
+```{r}
+
+leaflet()%>%
+        addTiles()%>%
+         addMarkers(lng=-1.4955395745111475, lat=43.516494689902025, popup="MANUIT
+24 R DU LAZARET
+64600 ANGLET")%>%
+                addMarkers(  lng=-1.5637847303349208, lat= 43.46056722189182, popup= "CENTRE EQUESTRE
+Rue de Palassie, 64200 Biarritz")%>%
+                addMarkers(  lng=-1.5468256504478741, lat= 43.460743071483705, popup= "La Maison de Gilles.  
+1 bis Rue Chapelet, 64200 Biarritz.  ")
+
+```
+
+
+ columna 2 {data-width=35% .tabset}
+--------------------------------------------------------------------------------
+### Centres d'accueil de nuit 
+
+
+   
+HEBERGEMENT D'URGENCE **MANUIT**   
+24 R DU LAZARET
+64600 ANGLET   
+La durée de séjour proposée est de maximum 3 jours.   
+
+**CENTRE EQUESTRE**   
+Rue de Palassie, 64200 Biarritz   
+TÉL : 0559261347   
+La durée de séjour proposée est de maximum 3 jours.   
+
+
+**La Maison de Gilles**     
+1 bis Rue Chapelet, 64200 Biarritz     
+TÉL : 0559462525   
+
+La durée de séjour proposée est de 1 à 15 jours pour la Maison de Gilles renouvelable une fois. Cette durée est conditionnée à la situation et aux besoins de la personne accueillie.
+
+La gestion des entrées est soit de la responsabilité du Service Intégré d'Accueil et d'Orientation (SIAO) Téléphone : 05 59 52 60 93, soit celle du SAMU social (115)  
+
+### **le 115**   
+
+Le 115 est un téléphone du service public qui inscrit les personnes qui sont dans la rue dans des centres d'accueil de nuit comme Manuit, à Anglet, ou au centre équestre de Biarritz ou à la Maison de Gilles. 
+
+
+### Se loger
+L'Hébergement social en Bayonne (64100) : un besoin en forte croissance
+Malgré une augmentation régulière du nombre de place en Hébergement social (plus de 100 000 places en France), ce nombre se révèle toujours insuffisant pour faire face, en Bayonne (64100) comme presque partout en France, aux besoins sans cesse croissants.
+L'Hébergement social est considéré comme une solution temporaire permettant, en Bayonne (64100), aux personnes précarisées par des difficultés sociales ou contraintes de quitter le logement familiale (femmes victimes de violence par exemple), de trouver un lieu de vie le temps de se reconstruire
+A qui s'adresser en Bayonne (64100) pour bénéficier d'un Hébergement social
+L'admission à l'aide sociale et à ce titre, à l'Hébergement social, relève du Conseil Général. En Bayonne (64100), la demande de prise en charge peut être déposée auprès du CCAS le plus proche
+On distingue, en fonction des besoins immédiats, en Bayonne (64100), 3 grandes catégories d'Hébergement social :
+- Les Centres d'hébergement et de réinsertion Sociale (CHRS)
+
+
+
+
+**SE FORMER**     
+===============================================================================
+## columna mapa {data-width=65%}
+
+### Carte interactive     
+
+
+ columna 2 {data-width=35% .tabset}
+--------------------------------------------------------------------------------
+### Lieux pour apprendre le Francais
+
+### Formation Professionele
+
+
+**Adresses utiles**     
+===============================================================================
+```{r, echo=FALSE}
+adres<- read.csv2("adresse.csv")
+
+adr<-DT::datatable(adres[,1:4])
+
+adr
+```
+
+**Glossaire**     
+===============================================================================
+
+##
+
+ <!-- Botón para abrir el archivo PDF -->
+ 
+    
+    <br/>
+
+    <br>
+
+Ce lexique a été pris d'un document elaboré par l'Institut du Travail Social en 2012.    
+
+**AAH** (Allocation aux adultes handicapés).  
+Allocation destinée à couvrir les besoins de la vie courante des handicapés adultes. Les nouvelles dispositions légales la transforme en équivalent du SMIC pour les handicapés.
+Conditions : taux d’incapacité permanente de 80%, être âgé de 20 ans minimum.   
+  <br/>
+**ACSÉ** (Agence nationale pour la cohésion et l'égalité des chances)  
+Etablissement public national à caractère administratif, l'Acsé contribue à des actions en faveur des personnes rencontrant des difcultés d'insertion sociale ou professionnelle. L'agence a été créée par la loi du 31 mars 2006 sur l'égalité des chances pour renforcer l'action de l'Etat en faveur des habitants des 2 213 quartiers de la politique de la ville et pour promouvoir l'égalité des chances et la diversité.   
+Voir le site de l'ACSÉ.   
+  <br/>   
+**ACT** (Appartement de coordination thérapeutique)     
+ACT est une structure hébergeant, à titre temporaire, des personnes en situation de fragilité psychologique et sociale, nécessitant des soins et un suivi médical. Il assure une prise en charge de la personne : coordination médicale et psychologique, suivi social. Le résident est accompagné par une équipe pluridisciplinaire.   
+  <br/>
+  
+**ADAPEI**      
+Association départementale des amis et parents d'enfants inadaptés.   
+  <br/>  
+  
+**ADMR**     
+Association du service à domicile.     
+Voir le site de l'ADME    
+  <br/>  
+**AED** (Aide éducative à domicile)      
+L'action éducative à domicile s'exerce au sein de la famille à la demande des parents ou sur proposition des travailleurs sociaux (avec l'accord des parents) pour un soutien éducatif auprès de leur(s) enfant (s), lorsque ceux-ci sont en difculté dans leur famille ou lorsque la famille est en difculté avec ses enfants (difcultés d'ordre matériel, psychologique, relationnel, qui risque de mettre en danger la santé, la sécurité ou l'éducation des enfants).      
+     <br/>                     
+**AEMO** (Action éducative en milieu ouvert)   
+Ensemble des mesures éducatives et/ou sociales décidées soit par un magistrat, soit par un détenteur de l'autorité administrative. Les mesures concernent un mineur et/ou sa famille. L'AEMO est mise en place au domicile et/ou dans tous les lieux fréquentés par le mineur de façon habituelle.   
+ <br/>   
+**AFORTS** (Association française des organismes de formation et de recherche en travail social)   
+Fusionné avec le GNI dans l'UNAFORIS en 2012.   
+Voir le site de l'UNAFORIS  
+ <br/>   
+**AFPA** (Association française pour la formation professionnelle des adultes)   
+
+Née en 1949, elle assure des missions d'orientation, de formation (qualifante ou diplômante), de conseil en matière de VAE et de ressources humaines. D'abord centrée sur la qualifcation des salariés désirant acquérir un titre, elle s'occupe aussi depuis quelques années des demandeurs d'emploi.   
+Voir le site de l'AFPA  
+ <br/>   
+**AFSSAPS** (Agence Française de sécurité sanitaire et des produits de santé)   
+Elle contrôle les médicaments, le sang et les grefes, mais aussi les insecticides et les cosmétiques. Elle établit et contrôle les règles de fabrication, d'exploitation et d'utilisation de ces diférents produits.   
+Voir le site de l'AFSSAPS   
+ <br/>   
+**AGEFIPH** (Association pour la gestion du fonds pour l'insertion professionnelle des personnes handicapées)   
+Cette association gère le fonds destiné à favoriser l'accès et le maintien dans l'emploi des personnes handicapées en milieu ordinaire de travail.   
+Voir le site de l'AGEFIPH   
+ <br/>
+**AME** (Aide médicale d'État)  
+Elle prend en charge les dépenses de soins des personnes qui ne remplissent pas les conditions de stabilité et de régularité de résidence s'appliquant à la CMU.
+ <br/>   
+**ANSES** (Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail)   
+Elle a été créée le 1er juillet 2010 par la fusion de deux agences sanitaires françaises : l'Afssa (Agence française de sécurité sanitaire des aliments) et l'Afsset (Agence française de sécurité sanitaire de l'environnement et du travail). Elle assure des missions de veille, d'expertise, de recherche et de référence sur un large champ couvrant la santé humaine, la santé et le bien-être animal, et la santé végétale.  
+Voir le site de l'ANSES.  
+                                            
+
+ <br/>     
+**AP** Atelier protégé, devenu Entreprise Adaptée APA (Allocation personnalisée d'autonomie).  
+Allocation permettant aux personnes dépendantes de faire face aux dépenses engendrées par les aides dont elles ont besoin.   
+ <br/>.  
+**APE** (Allocation parentale d'éducation)   
+L'Allocation Parentale d'Education s'adresse aux parents qui souhaitent arrêter ou réduire leur activité pour s'occuper de leurs jeunes enfants, à condition que ceux-ci soient nés avant le 01/01/2004. En efet, pour les enfants nés depuis cette date, dans le cadre de la Prestation d'Accueil du Jeune Enfant, les parents peuvent bénéfcier du « complément de libre choix d'activité ».   
+ <br/>   
+**API** (Allocation de parent isolé)   
+A compter du 1er juin 2009, l'Allocation de parent isolé (Api) est remplacée par le Revenu de solidarité active (RSA).   
+ <br/>   
+**APJE** (Allocation pour jeune enfant)   
+Cette allocation est destinée à compenser les charges occasionnées par l'arrivée d'un enfant, pour les familles aux revenus modestes. Pour les enfants nés depuis le 1er janvier 2004, l'Allocation Pour Jeune Enfant (APJE) est remplacée par la prime à la naissance ou l'adoption et l'allocation de base de la PAJE. Pour les enfants nés avant cette date, l'APJE est toujours d'actualité.    
+ <br/>.  
+**APP** (Atelier Pédagogique Personnalisé)   
+Mis en place en 1994, les Ateliers Pédagogiques personnalisés ont pour objectif de permettre la création et le maintien de lieux de formation de proximité susceptibles d'accueillir des publics divers, dits de bas niveau, qui n'ont pu trouver de solutions dans les autres structures existantes, de promouvoir un type de formation originale, adaptée à la situation particulière de chaque personne et assurant une culture technique de base ainsi que de développer une pédagogie personnalisée en fonction des besoins de chaque utilisateur et permettre la consolidation d'un projet professionnel.
+                      
+ <br/>
+**ARS** (Agence régionale de santé)   
+Créées par la loi portant réforme de l'hôpital et relatif aux patients, à la santé et aux territoires (HPST) du 21 juillet 2009, les agences régionales de santé ont pour missions de défnir la politique de santé régionale en liaison avec tous les acteurs, assurer la régulation et la coordination de leurs actions, contribuer à la réduction des inégalités en matière de santé, veiller aux grands équilibres fnanciers et respecter l'objectif national de dépenses d'assurance maladie.   
+Voir le site des ARS   
+ <br/>.  
+**ASE** (Aide sociale à l'enfance)   
+C'est un ensemble de formes de protection à l'enfance au sein, contre ou sans sa famille. Ses actions sont dirigées envers des mineurs, des jeunes majeurs et leurs familles confrontés à des difcultés sociales importantes. L'ASE permet de leur apporter un soutien matériel, éducatif et psychologique. Du point de vue juridique, l'ASE remplace une autorité parentale inexistante ou défaillante.   
+ <br/>
+**ATSEM** (Agent spécialisé des écoles maternelles).  
+Les agents territoriaux spécialisés des écoles maternelles sont chargés de l'assistance au personnel enseignant pour la réception, l'animation et l'hygiène des très jeunes enfants ainsi que la préparation et la mise en état de propreté des locaux et du matériel servant directement à ces enfants. Ils participent à la communauté éducative.   
+ <br/>.  
+**ASF** (Allocation de soutien familial)
+L'allocation de soutien familial (ASF) est versée par la caisse d'allocation familiale (CAF) si le parent est isolé et a à sa charge un enfant, ou s'il a recueilli un enfant et qu'il vit seul ou en couple.   
+
+ <br/>    
+**CAARUD** (Centres d'accueil et d'accompagnement à la réduction des risques pour les usagers de drogues)   
+Issus de la loi du 9 août 2004, ils assurent l'accueil et l'accompagnement à la réduction des risques pour les usagers de drogues.
+ <br/>   
+
+**CADA** (Centre d'accueil des demandeurs d'asile)   
+Structure d'accueil des demandeurs d'asile sans ressources sufsantes pour se loger, le temps que la procédure engagée, soit auprès de l'OFPRA, soit auprès de la Commission des recours des réfugiés, aboutisse.   
+ <br/>   
+
+**CADCO** (Coordination des actions pour le droit à la connaissance des origines)      
+Association représentant les personnes nées sous X. lle a pour objectif la reconnaissance du droit de chacun à connaître l'identité de ses parents.   
+Voir le site de la CADCO   
+ <br/>
+**CAE** (Centre d'action éducative)   
+Les CAE remplissent, sur décision judiciaire, des missions d'investigation et d'éducation en milieu ouvert à l'égard des mineurs délinquants ou en danger. Ils ont parfois également des missions d'hébergement.   
+ <br/>   
+**CAFS** (Centre d'accueil familial spécialisé)   
+
+Il permet d'héberger des enfants ou adolescents handicapés. Il met à leur disposition un environnement éducatif, psychologique et afectif complémentaire à celui qu'ils peuvent trouver dans leur propre entourage.   
+
+ <br/>  
+**CAMSP** (Centre d'action médico-sociale précoce)   
+
+Les CAMSP dépistent et traitent en cure ambulatoire des enfants de moins de 6 ans atteints d'un handicap sensoriel, moteur ou mental en vue d'une adaptation sociale et éducative dans leur milieu naturel et avec la participation de celui-ci.   
+ <br/>   
+**CAT** (Centre d'aide par le travail)  
+Devenu ESAT : Etablissements et services d'aide par le travail en 2005 (Loi 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées).  
+                     
+ <br/>   
+ 
+**CATTP** (Centre d'accueil thérapeutique à temps partiel)   
+C'est une structure d'accueil qui vise à maintenir ou à favoriser une existence autonome par des actions de soutien ou de thérapies de groupes. Une équipe pluridisciplinaire propose sur des demi-journées des activités thérapeutiques et d'éveil. Les activités peuvent être très diverses : sport, atelier vidéo, musique etc...   
+ <br/>   
+**CAVA** (Centre d'Adaptation à la vie active)   
+
+Structure qui accueille et accompagne des jeunes majeures. Sa mission principale est de développer l'autonomie de ces jeunes et de favoriser leur insertion dans le monde du travail.   
+
+**CCAS** (Centres communaux d'action sociale)   
+
+Le CCAS anime une action générale de prévention et de développement social dans la commune en liaison avec les institutions publiques et privées. Il développe diférentes activités et missions légales ou facultatives, directement orientées vers les populations concernées : aide et accompagnement des personnes âgées, aides aux personnes handicapées, aux enfants, aux familles en difculté, lutte contre les exclusions...   
+Voir le site de l'UNCCAS (Union nationale des centres communaux d'action sociale) CCNE (Comité consultatif national d'éthique pour les sciences de la vie et de la santé)
+ <br/>   
+**CCNE**   
+Créé en 1983, il a pour mission de donner son avis sur les problèmes éthiques soulevés par la recherche dans les domaines de la biologie, de la médecine et de la santé. Il peut être amené à réféchir à des questions sociales.   
+Voir le site du CCNE   
+ <br/>
+**CDAG** (Centre de dépistage anonyme et gratuit)   
+Le CDAG propose à toute personne désirant une information, un test de dépistage (VIH, hépatite b, hépatite C, syphilis) ou un entretien confdentiel avec un médecin sont proposés.   
+ <br/>
+**CDAPH** (Commission des droits et de l'autonomie des personnes handicapées)   
+Commission instituée par la loi n° 2005-102 du 11 février 2005 pour remplacer depuis janvier 2006 les et la COTOREP. Cette commission prend des décisions relatives à l'ensemble des droits de la personne handicapée. Elle est intégrée dans la Maison départementale des personnes handicapées.    
+ <br/>   
+**CDCPH** (Conseil Départemental Consultatif des Personnes Handicapées)   
+
+Les CDCPH ont été instaurés par la loi n° 2005-102 du 11 février 2005.
+Ils donnent un avis et formulent des propositions sur les orientations de la politique du handicap dans tous les domaines de la vie sociale et sur les mesures à mettre en oeuvre au plan local.   
+
+ <br/>   
+**CDES** (Commission départementale de l'éducation spéciale)   
+Remplacée par la Commission des droits et de l'autonomie des personnes handicapées (CDAPH)   
+ <br/>   
+**CEF** (Centre éducatif fermé)   
+Centre accueillant des mineurs délinquants multirécidivistes de 13 à 18 ans, soit sous contrôle judiciaire, soit en sursis avec mise à l'épreuve, soit en libération conditionnelle.   
+
+ <br/>   
+**CER** (Centre éducatif renforcé)   
+Il a pour mission de mettre en oeuvre des projets pour des mineurs délinquants multirécidivistes, à partir d'un lieu et d'un temps de rupture, avec une prise en charge intensive.  
+ <br/>   
+**CESU** (Chèque emploi service universel)   
+Créé en 2005, il permet de rémunérer les services à la personne.   
+Voir le site du CESU   
+ <br/>
+**CHRS** (Centre d'hébergement et de réinsertion sociale)   
+Établissement public ou privé agréé par l'État dont la mission première est de prendre en charge des personnes adultes ou des familles sans ressources et ayant de graves difcultés sociales, avec ou sans hébergement. L'objectif étant la réinsertion sociale de ces personnes. 
+ <br/>
+**CHU** Centre d'hébergement d'urgence.   
+ <br/>
+**CIAS** Centre intercommunal d'action sociale.   
+ <br/>
+**CIF** (Classifcation Internationale du Fonctionnement, du handicap et de la santé)   
+La Classifcation internationale du fonctionnement, du handicap et de la santé adoptée par l'Organisation mondiale de la santé (OMS) en 2001 remplace la Classifcation internationale des Handicaps : défciences, incapacités, désavantages.   
+ <br/>   
+**CIVIS** Contrat d'insertion dans la vie sociale.   
+ <br/>   
+**CJE** Contrat jeune en entreprise.   
+Voir aussi Soutien à l'emploi des jeunes en entreprises (SEJE).
+ <br/>   
+
+ **CLEIRPPA** (Centre de liaison étude-information-recherche-problèmes personnes âgées)   
+C'est un lieu d'information, de réfexion, d'échange, un organisme spécialisé dans les conseils et les études en gérontologie sociale.   
+Voir le site du CLEIRPPA   
+ <br/>
+**CLIS** (Classe pour l'inclusion scolaire)   
+Les CLIS ont pour vocation d'accueillir des élèves handicapés dans des écoles ordinaires afn de leur permettre de suivre totalement ou partiellement un cursus scolaire ordinaire.   
+ <br/>   
+**CMP** (Centre médico-pédagogique)   
+Les CMP appartiennent au secteur sanitaire et sont rattachés à un centre hospitalier (inter-secteur de psychiatrie). Ils ont pour rôle : l'organisation des actions de prévention, de diagnostic, de soins ambulatoires et d'intervention à domicile. La prise en charge des enfants jusqu'à 16 ans présentant des difcultés afectives, psychologiques ou familiales.   
+ <br/>   
+**CMPP** (Centre médico-psycho-pédagogique)   
+Les CMPP ont pour objectif de dépister de manière précoce et traiter des enfants (de la naissance à 20 ans) dont l'inadaptation est liée à des troubles neuropsychiques, psychomoteurs, orthophoniques, ou à des troubles du comportement, en vue de les réadapter tout en les maintenant dans leur milieu naturel (sans hospitalisation).
+ <br/>   
+**CMPR** Centre de Médecine Physique et de Réadaptation.   
+ <br/>   
+**CMU** (Couverture maladie universelle)   
+Dispositif mis en place en 2 000 pour un meilleur accès aux soins des personnes à faibles revenus et qui ne pouvaient pas bénéfcier d'une couverture par la Sécurité sociale.   
+Voir le site de la CMU   
+ <br/>   
+**CNAF** Caisse nationale des allocations familiales.   
+Voir le site de la CNAF   
+ <br/>   
+**CNAOP** (Conseil national pour l'accès aux origines personnelles)   
+Organisme qui recueille l'identité des mères et/ou des pères des enfants nés sous X. Grâce à lui, la mère qui n'a pas souhaité donner son identité au moment de son accouchement peut le faire à tout moment. Le père qui a reconnu l'enfant avant sa naissance mais n'a pas été informé de la naissance peut entreprendre des recherches en ce sens.   
+Voir le site du CNAOP   
+     <br/>                                      
+
+**CNSA** (Caisse nationale de solidarité pour l'autonomie)   
+Etablissement public national à caractère administratif appartenant au dispositif de protection sociale, créé en 2005 et destiné à assurer l'autonomie des personnes âgées et handicapées.   
+Voir le site de la CNSA   
+ <br/>   
+**COTOREP** Commission technique d'orientation et de reclassement professionnel).   
+Remplacée par la Commission des droits et de l'autonomie des personnes handicapées : CDAPH par la loi n° 2005-102 du 11 février 2005   
+ <br/>.  
+
+**CPCT** Centre psychanalytique de consultations et traitement.   
+ <br/>   
+ 
+**CPH** (Centre provisoire d'hébergement)   
+Centre d'Hébergement et de Réadaptation Sociale (CHRS) spécialisé dans l'accueil et l'accompagnement de familles réfugiées.   
+ <br/>   
+**CREAI** (Centre régional pour l'enfance et l'adolescence inadaptées)   
+Les CREAI ont un rôle d'animation et d'information en matière de prévention, d'observation, de soins et d'éducation spécialisée, de réadaptation et de réinsertion sociale concernant les enfants et adolescents inadaptés de toutes catégories. Leur mission est maintenant étendue aux adultes.   
+ <br/>
+**CRP** (Centre de Rééducation Professionnelle)   
+
+Ils ont pour mission de faciliter la réinsertion sociale et professionnelle des travailleurs handicapés.   
+
+ <br/>   
+**CRRF** Centre de Rééducation, Réadaptation Fonctionnelle.   
+ <br/>   
+**CSAPA** (Centre de soins, d'accompagnement et de prévention en addictologie).  
+Les Centres de Soins d'Accompagnement et de Prévention en Addictologie sont des structures résultant du regroupement des services spécialisés pour l'alcool et les drogues (centres de cure ambulatoire en alcoologie (CCAA) et centres spécialisés de soins aux toxicomanes (CSST)), prévu par le décret du 14 mai 2007.   
+ <br/>   
+**CSTS** (Conseil supérieur du travail social)   
+Le Conseil supérieur du travail social apporte au ministre chargé des afaires sociales, qui le préside, une expertise en matière d'exercice et de pratiques professionnelles et formule des avis, recommandations et propositions, notamment dans le cadre de rapports, sur les problématiques que le ministre lui soumet. Il assure une fonction de veille sur les nécessaires évolutions du travail social et des pratiques professionnelles liées à la mise en œuvre des politiques publiques. (Article 1 de l'Arrêté du 7 juillet 2010 relatif à la composition du Conseil supérieur du travail social) 
+ <br/>   
+**CTNERHI** Centre Technique National d'Etudes et de Recherches sur les Handicaps et les Inadaptations.   
+Voir le site du CTNERHI.  
+ <br/>   
+**CT** Communautés thérapeutiques expérimentales.  
+ <br/>.  
+**CUMP** (Cellule d'urgence médico-psychologique)   
+Ces centres permettent la prise en charge précoces des blessés psychiques qui ont subit un traumatisme à la suite d'accidents catastrophiques, catastrophes, ou encore attentat.
+ <br/>
+**Curatelle**
+Mesure intermédiaire entre la sauvegarde de justice et la tutelle. La curatelle est indiquée lorsque les facultés mentales sont altérées par la maladie, l'infrmité ou l'âge. La personne a besoin d'être conseillée et contrôlée dans les actes les plus graves de la vie civile. La curatelle est prononcée par le juge des tutelles. Régime d'incapacité partielle, le majeur protégé pouvant notamment utiliser ses revenus ou voter.   
+ <br/>   
+**CUCS** (Contrats urbains de cohésion sociale)  
+A compter du 1er janvier 2007, les contrats urbains de cohésion sociale prendront la suite des contrats de ville. Le contrat urbain de cohésion sociale est un contrat passé entre l'Etat et les collectivités territoriales qui engage chacun des partenaires à mettre en œuvre des actions concertées pour améliorer la vie quotidienne des habitants dans les quartiers connaissant des difcultés (chômage, violence, logement...).   
+
+La loi du 5 mars 2007 instituant le droit au logement opposable fxe à l’Etat une obligation de résultats et non plus seulement de moyens. Elle désigne l’Etat comme le garant du droit au logement.
+
+ <br/>   
+
+**DDASS** (Direction départementale des afaires sanitaires et sociales)   
+Le terme désignait deux types de services : les services déconcentrés de l'Etat dans les départements et les services du département compétents dans la santé et l'action sociale. Les premiers contribuaient surtout à l'application des règlements sanitaires, à la planifcation. Ils géraient la santé scolaire et les services spécialisés dans la de l'enfance ; ils assuraient des prestations sociales, dont le RMI, ainsi que l'aide sociale accordée aux personnes en situation exceptionnelle. Les DDASS ont disparus en 2010 avec la création des Agences Régionales de Santé (ARS).
+ <br/>   
+**DGAS** (Direction générale de l'action sociale)   
+LA DGAS est une direction commune du Ministère du travail, des relations sociales, de la famille, de la solidarité et de la ville avec le Ministère de la santé et des sports. Elle élabore, coordonne et met en œuvre des politiques d'action sociale, médico-sociale et de solidarité.   
+Voir le site de la DGAS.  
+ <br/>   
+**DGCS** (Direction générale de la cohésion sociale).  
+La direction générale de la cohésion sociale est la direction d’administration centrale des ministères sociaux qui est chargée de la conception, du pilotage et de l’évaluation des politiques publiques de solidarité, de développement social et de promotion de l’égalité favorisant la cohésion sociale.   
+Voir le site de la DGCS   
+ <br/>   
+**DRASS** (Direction régionale des afaires sanitaires et sociales)  
+La DRASS, entre autres missions, jouait un rôle important dans la politique régionale de santé, notamment lors de la conférence régionale de santé publique qui avait lieu tous les ans ; elle participait à la planifcation sanitaire et à celle des établissements sociaux et médico-sociaux. Elle veillait également à l'application des conventions Etat-Sécurité sociale. Les DRASS ont disparus en 2010 avec la création des Agences Régionales de Santé (ARS).   
+ <br/>   
+ **DAL** Droit au logement
+ Voir le site de la DAL
+ <br/>   
+**DALO** (Droit au logement opposable)   
+  <br/>                    
+
+**DSM-IV** (Diagnostic and Statistical Manual - Revision 4)  
+En français, Manuel diagnostique et statistique des troubles mentaux. Le DSM-IV est un système ofciel de classifcation des signes et symptômes des maladies mentales de l'Association américaine de psychiatrie (dans sa quatrième édition).
+
+**DSM-V** (Diagnostic and Statistical Manual - Revision 5)   
+Voir DSM-IV.
+Une nouvelle version du DSM-V, devrait sortir en Mai 2013. Voir le site consacré à ce projet.
+ <br/>   
+                     
+**EA** (Entreprise Adaptée : anciennement Atelier Protégé)   
+Milieu de travail ofrant des conditions de travail et un environnement adaptés aux handicapés ayant des capacités de travail réduites. L'entreprise adaptée s'oppose au travail en milieu ordinaire. Les salariés handicapés travaillent dans des ateliers protégés (devenus EA), ou encore dans les centres d'aide par le travail (devenus ESAT).   
+ <br/>   
+**EHPA** Etablissement d'hébergement pour personnes âgées.   
+ <br/>   
+**EHPAD** Etablissement d'hébergement pour personnes âgées dépendantes.   
+ <br/>   
+**EI** (Entreprise d'insertion)   
+Entreprise aidée par l'État pour permettre l'insertion sociale et professionnelle des publics les plus exclus de l'emploi. De statut associatif ou commercial, elle doit être économiquement viable. Elle accueille des personnes auxquelles elles ofrent un contrat de travail renouvelable dans la limite de 24 mois et un accompagnement socio-éducatif adapté.   
+ <br/>   
+**EPDAH** Etablissement public départemental pour adultes handicapés.   
+ <br/>   
+**EPM** Etablissement pénitentiaire spécialisé pour mineurs.   
+ <br/>   
+**EPMO** Emploi Protégé en Milieu Ordinaire.   
+ <br/>   
+**EPS** Etablissement public de santé.   
+ <br/>   
+**EPSM** Etablissement public de santé mentale.   
+  <br/>   
+**EPSMS** Etablissement public social et médico-social.   
+ <br/>  
+**EREA** (Etablissement Régional d'Education Adaptée)   
+Les établissements régionaux d'enseignement adapté (EREA) sont des établissements publics locaux d'enseignement (EPLE). Leur mission est de prendre en charge des adolescents en grande difculté scolaire et sociale, ou présentant un handicap.   
+ <br/>   
+**ERP** Etablissement de rééducation professionnelle.   
+ <br/>   
+**ERPD** (Ecole régionale du premier degré)   
+Elles accueillent, en internat, les enfants de familles exerçant des professions non sédentaires, ainsi que des enfants de familles dispersées ou en difcultés fnancières momentanées.   
+ <br/>   
+**ERS** (Etablissement de réinsertion scolaire)   
+Les établissements de réinsertion scolaire accueillent des collégiens perturbateurs dont le comportement nuit au bon fonctionnement de la classe et de l'établissement.
+Le placement en ERS peut être soit décidé par l'Inspecteur d'Académie en accord avec le jeune et sa famille, soit imposé par le juge des enfants.   
+ <br/>   
+**ESAT** (Etablissements et services d'aide par le travail) (anciennement CAT)   
+Accueille des personnes handicapées âgées de 20 ans et plus, ne pouvant momentanément ou durablement travailler dans des entreprises ordinaires, ni dans un atelier protégé, ni exercer une activité professionnelle indépendante.
+Cette structure leur ofre une activité, avec des conditions de travail aménagées et peut passer convention avec le secteur psychiatrique pour accueillir des malades mentaux faisant l'objet d'interventions thérapeutiques.   
+ <br/>
+**ESMS** Etablissement social et médico-social.   
+ <br/>
+**ESS** (Equipe de suivi de la scolarisation)
+L'ESS veille à la bonne application du PPS (projet personnalisé de scolarisation). Elle réunit au moins une fois par an la famille, l'enseignant référent, les enseignants de l'élève handicapé, les professionnels de santé et les professionnels des services sociaux.
+ <br/>   
+**ESS** (Economie sociale et solidaire.)
+Regroupe s formes d’organisations et d’entreprises, de coopératives, mutuelles,associations, syndicats et fondations, fonctionnant sur des principes d'égalité des personnes (1 personne 1 voix), de solidarité entre membres et d'indépendance économique. La fnalité est tournée vers des projets d’utilité sociale et environnementale.   
+**ETTI** Entreprise de Travail Temporaire d'Insertion.   
+  <br/>   
+**FAM** (Foyer d'accueil médicalisé)
+Ces établissements accueillent des adultes gravement handicapés, mentalement ou physiquement dont la dépendance, totale ou partielle, constatée par la CDAPH les rend inaptes à toute activité professionnelle et qui ont besoin d'une aide pour la plupart des actes de la vie courante, ainsi que d'une surveillance médicale et de soins constants.   
+<br/>   
+**FDT** (Foyer à double tarifcation)     
+Structure qui accueille des adultes gravement handicapés. Afn de mieux répondre aux besoins, deux organismes prennent en charge le FDT : le Conseil Général qui est compétent pour les foyers et l'État qui, lui, est compétent pour les Maisons d'accueil spécialisées (MAS).   <br/>   
+**FJT** Foyer de jeunes travailleurs.
+<br/>   
+**Foyer de l'enfance**
+Il héberge les enfants de 0 à 18 ans de l'aide sociale à l'enfance de la zone géographique où il est implanté. Les foyers de l'enfance éduquent les enfants et les orientent suivant un programme qui les aidera à atteindre leur objectif socioprofessionnel. Ils sont gérés par le département ou tout à fait exceptionnellement par une association privée.   
+<br/>   
+**Foyer de vie ou occupationnel**
+Établissement qui accueille des adultes handicapés dont l'autonomie est réduite et qui ne peuvent travailler. Contrairement à une Maison d'accueil spécialisée (MAS), les personnes hébergées ne nécessitent pas de surveillance et de soins constants.
+<br/>   
+**Foyer d'hébergement pour adultes handicapés**
+Il accueille en fn de journée et en fn de semaine les personnes handicapées travaillant soit en établissement de travail protégé, soit en milieu ordinaire ou encore en centre de rééducation professionnelle.   
+ <br/>   
+**GAP** Groupe d'action psychopédagogique.
+<br/>   
+
+**GAPP** Groupe Action Psycho Pédagogique ou Groupe d'aptitude Psycho Pédagogique .Se nomme aussi GAP. Devient RASED.   
+<br/>   
+**GCSMS** Groupement de coopération sociale et médico-sociale.   
+<br/>   
+
+**GEPSO** Groupe national des établissements et services publics sociaux.
+Voir le site du GEPSO
+  <br/>   
+**HALDE** (Haute autorité de lutte contre les discriminations et pour l'égalité des chances)   
+Entité administrative indépendante créée en 2005, chargée de lutter contre toutes les formes de discrimination. Par la loi organique n°2011-333 du 29 mars 2011, le Défenseur des droits a succédé au Médiateur de la République, au Défenseur des enfants, à la Haute autorité de lutte contre les discriminations et pour l'égalité (HALDE) et à la Commission nationale de déontologie de la sécurité (CNDS).   
+Voir le site du défenseur des droits.   
+<br/>   
+**HAS** (Haute autorité de santé).  
+La HAS a été créée par la Loi du 13 août 2004 relative à l'assurance maladie afn de contribuer au maintien d'un système de santé solidaire et au renforcement de la qualité des soins, au bénéfce des patients.   
+Voir le site de la HAS.  
+<br/>   
+**HDJ** (Hôpital de jour)   
+Etablissement public de soins, aménagé pour accueillir et soigner les malades pendant une période limitée.
+<br/>   
+**HPST** (loi Hôpital, patients, santé et territoires)   
+Loi n° 2009-879 du 21 juillet 2009 portant réforme de l'hôpital et relative aux patients, à la santé et aux territoires.
+Voir la loi sur Légifrance.  
+  <br/>       
+**HAD** Hospitalisation à domicile.   
+   <br/>                                 
+**IAE** (Insertion par l'activité économique).  
+L'insertion par l'activité économique permet à des personnes sans emploi rencontrant des difcultés sociales et professionnelles particulières de bénéfcier de contrats de travail en vue de faciliter leur insertion sociale et professionnelle.   
+<br/>   
+**IEM** (Institut d'éducation motrice)   
+Établissements médico-éducatifs accueillent des enfants ou adolescents atteints d'une défcience motrice.   
+<br/>   
+**IES** (Institut d'éducation sensorielle)   
+Etablissement qui accueille et scolarise de jeunes défcients visuels et/ou auditifs.
+<br/>   
+**IGAS** (Inspection générale des afaires sociales)   
+Service interministériel de contrôle, d'audit et d'évaluation des politiques sociales pour éclairer la décision publique. Elle réunit 130 experts de la Cohésion sociale (Famille, Protection de l'enfance, Lutte contre l'exclusion, Travail social...), de la Protection sociale (Sécurité Sociale, Prestations sociales....), du Travail, emploi, formation professionnelle, et de la Santé.   
+Voir le site de l'IGAS  
+<br/>   
+**IMC** (Infrme moteur cérébral)   
+Voir Le site de l'Infrmité Motrice Cérébrale, proposé par l' APF (Association des Paralysés de France).  
+<br/>   
+**IME** (Institut médico-éducatif)   
+Établissement d'éducation spéciale pour enfants et adolescents défcients intellectuels associant action pédagogique, psychologique, sociale, médicale et paramédicale pour des enfants et adolescents de 3 à 20 ans (des prolongations sont possibles). L'IME regroupe les anciens IMP (Institut médico-pédagogique : accueil des jeunes de 3 à 14 ans) et IMPRO (institut médico-professionnel : accueil des jeunes de 14 à 20 ans et plus).   
+<br/>   
+**IMP** (Institut médico-pédagogique).  
+Ancienne appellation des IME pour enfants.   
+<br/>   
+**IMPro** (Institut médico-professionnel)   
+Ancienne appellation des IME pour adolescents et jeunes adultes.   
+<br/>   
+**InVS** (Institut de veille sanitaire)   
+Etablissement public, placé sous la tutelle du ministère chargé de la Santé, l'Institut de veille sanitaire (InVS) réunit les missions de surveillance, de vigilance et d'alerte dans tous les domaines de la santé publique.   
+Voir le site de l'InVS.  
+<br/>   
+**IR** ou **IRP** (Institut de rééducation ou institut de rééducation psychothérapique)   
+Les IR ou IRP étaient des établissements médico-éducatifs qui avaient pour vocation d'accueillir des enfants ou des adolescents présentant des troubles du comportement importants, sans pathologie psychotique ni défcience intellectuelle. Ils deviennent des ITEP.   <br/>   
+**IRPA** (Institut de rééducation psychothérapique pour adolescents)   
+Même textes réglementaires que les IRP. Seule spécifcité : les IRPA sont spécialisés dans l'accueil d'adolescents, alors que certains IR accueillent des enfants, parfois très jeunes. Transformés également en ITEP.   
+<br/>   
+**ITEP** (Instituts Térapeutiques Educatifs et Pédagogiques)   
+Dispense des soins et une éducation spécialisés aux enfants et adolescents présentant des troubles du caractère et du comportement susceptibles d'une rééducation psychothérapeutique sous contrôle médical. Ne pas confondre avec les internats de rééducation pour mineurs-justice.  
+    <br/>                                  
+**JAF** Juge aux Afaires Familiales
+<br/>   
+**JAP** Juge d'application des peines
+<br/>   
+**JE** Juge des enfants
+       
+      
+Ils ont été créés pour des personnes en situation de grande exclusion dont l'état de santé physique ou psychique nécessite un temps de repos ou de convalescence sans justifer d'une hospitalisation. Ils sont ouverts 24h/24 et 365 jours par an.
+
+**LVA** (Lieu de vie et d'accueil)   
+Structures d'accueil non traditionnelles (lieux de vie, lieux d'accueil, fermes thérapeutiques...). Formules institutionnelles rompant avec les pratiques professionnelles habituelles.   
+<br/>   
+**LSF** Langue des signes française.
+<br/>   
+**LHSS** (Lits halte soins santé)
+ <br/>   
+**Maisons départementales de solidarité**
+Remplacent les Territoires de vie sociale. Les politiques mises en œuvre par les Maisons du Département Solidarité (MDS) concernent l'enfance et la famille, les personnes âgées, les personnes handicapées, la santé et l'insertion.   
+<br/>   
+**MAPAD** Maison d'accueil pour personnes âgées dépendantes.
+<br/>   
+**MAPES** Maison d'accueil parents/enfants séparés.  
+<br/>   
+**MAS** (Maison d'accueil spécialisée)
+Établissement médico-social d'accueil pour adultes gravement handicapés (handicap intellectuel, moteur ou somatique grave) ou gravement polyhandicapés n'ayant pu acquérir un minimum d'autonomie. Il assure hébergement, soins (médicaux et paramédicaux, soins d'entretien), maternage et activités de vie sociale. Il vise à améliorer les acquis et à prévenir la régression des personnes handicapées accueillies. Il représente une alternative à l'hospitalisation psychiatrique.   
+<br/>   
+**MDPH** (Maisons Départementales des personnes handicapées)   
+
+Créées par la loi pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées du 11 février 2005, les Maisons Départementales des Personnes Handicapées (MDPH) sont chargées de l'accueil et de l'accompagnement des personnes handicapées et de leurs proches.   
+Voir le site portail des MPDH. 
+<br/>   
+**MECS** (Maison d'enfants à caractère social).  
+Accueille pour des séjours de durée variable, les enfants et les adolescents dont les familles se trouvent en difculté momentanée ou durable. Le placement est fait par le service de l'aide sociale à l'enfance, par le juge des enfants ou par la famille. L'établissement, souvent géré par une association privée, fonctionne en internat complet ou en foyer ouvert (les enfants sont alors scolarisés à l'extérieur).    
+<br/>   
+**MFR** (Maison Familiale Rurale).  
+
+Une Maison familiale rurale (MFR) est un centre de formation, sous statut associatif et sous contrat avec l'Etat ou les Régions, qui a pour objectifs la formation par alternance et l'éducation des jeunes et des adultes ainsi que leur insertion sociale et professionnelle.   
+Voir le site des MFR.  
+<br/>   
+**Mission locale**
+Structure d'accueil des jeunes de 16 à 25 ans sans emploi ni qualifcation, pour une aide au parcours d'insertion. Elle a un rôle d'écoute, d'information, d'orientation, d'accompagnement et de soutien en matière d'emploi, de formation, de santé, de logement, de loisirs. Créée en 1982, elle joue un rôle important dans l'insertion professionnelle des jeunes, en liaison avec les Permanences d'accueil, d'information et d'orientation (PAIO).   
+Voir le site du Conseil national des missions locales.  
+<br/>   
+**MMG** (Maison médicale de garde).  
+C'est un lieu d'accueil physique des patients, ouvert à la population sans discrimination, sans prise de rendez-vous, aux heures de fermeture des cabinets médicaux.   
+<br/>   
+**MO** ou **MOT** (Milieu ordinaire (de Travail)). 
+
+Le milieu ordinaire de travail regroupe les employeurs publics et privés du marché du travail « classique » de 20 salariés ou plus. Ils sont assujettis à une obligation d'emploi des travailleurs handicapés à hauteur de 6% de leur efectif total.   
+<br/>   
+**MP** ou **MPT**
+Milieu protégé (de Travail). Voir ESAT et EA
+<br/>   
+**OFII** (Ofce français de l'immigration et de l'intérgation)  
+
+Etablissement public administratif de l'état, qui met en oeuvre la politique défnie par le Ministère de l'immigration, de l'intégration, de l'identité nationale et du développement solidaire pour la promotion de l'immigration professionnelle. Remplace l'ANAEM ET l'OMI (Ofce des migrations internationales).   
+Voir le site de l'OFII.   
+<br/>   
+**OFPRA** (Ofce Français de protection des réfugiés et apatrides)   
+Etablissement public chargé de l'application des textes français (droit d'asile) et internationaux (convention de Genève) relatifs à la reconnaissance de la qualité de réfugié, d'apatride, et admis à la protection subsidiaire. Il établit et reconnaît les documents que les demandeurs ne peuvent pas obtenir auprès de leur pays. Depuis 2003, c'est le guichet unique de la demande d'asile.   
+Voir le site de l'OFPRA   
+
+**OIT** (Organisation internationale du travail)   
+L'Organisation internationale du Travail est l'institution chargée au niveau mondial d'élaborer et de superviser les normes internationales du travail.   
+Voir le site de l'OIT.  
+**OIM** (Ofce international pour les migrations)   
+L'OIM pose le principe selon lequel les migrations s'efectuant en bon ordre et dans le respect de la dignité humaine sont bénéfques pour les migrants et la société.  
+Voir le site de l'OIM.  
+<br/>   
+**OMI** (Ofce des migrations internationales).  
+Remplacé par l'OFII.
+<br/>   
+**OMS** (Organisation mondiale de la santé)   
+Institution spécialisée de l'ONU créée en 1948 afn d'amener tous les peuples au niveau de santé le plus élevé possible. 191 pays sont représentés à l'Assemblée mondiale de la santé, organe décisionnel qui défnit la politique de l'OMS.   
+Voir le site de l'OMS.  
+                     
+<br/>   
+**PAI** (Projet d'accueil individualisé)   
+Le PAI permet à l'enfant et à l'adolescent, atteint de maladie chronique, d'allergie et d'intolérance alimentaire, de suivre une scolarité ou d'être accueilli en collectivité, de bénéfcier de son traitement ou de son régime alimentaire, d'assurer sa sécurité et de compenser les inconvénients liés à son état de santé.   
+<br/>   
+**PAIO** (Permanence d'accueil, d'information et d'orientation).  
+Plus nombreuses que les missions locales qu'elles complètent, ce sont des structures qui sont également consacrées à l'insertion des jeunes de 16 à 25 ans par la formation. 
+<br/>   
+**PAJE** (Prestation d'accueil du jeune enfant).  
+
+La prestation d'accueil du jeune enfant est une aide fnancière allouée par la Caisse d'Allocations Familiales aux parents attendant un enfant, ayant un enfant en bas âge ou adoptant un enfant. Le dispositif comprend une prime à la naissance (ou à l'adoption), une allocation de base ainsi que deux compléments possibles.   
+<br/>   
+**PASS** (Pôles pour l'accompagnement à la scolarisation des jeunes sourds)   
+Créés en 2010, ces Pass doivent permettre à tous les élèves sourds, quel que soit le mode de communication choisi, de suivre un enseignement au plus près possible d'une scolarisation ordinaire. L'un des objectifs afchés est le renforcement de l'apprentissage du français écrit et oral, par un renforcement de son enseignement hebdomadaire.   
+<br/>   
+**PJJ** (Protection judiciaire de la jeunesse).  
+
+Service de protection du ministère de la justice ayant pour mission la protection à l'égard des mineurs ou de jeunes majeurs, de leurs familles en cas de danger. Il intervient en concertation avec les services d'aide sociale à l'enfance.
+Voir le site de la PJJ.  
+<br/>   
+**Placement familial**   
+Mesure prise à propos d'un mineur ou d'un adulte, jugé provisoirement irresponsable, le confant à un service, ou à une structure d'accueil, de traitement, ou de protection, de quelque nature qu'elle soit (famille, ou institution) et pour une durée déterminée, renouvelable.   
+Cette mesure peut être concertée, ou autoritaire par décision de justice, selon la nature des situations qui l'ont entraînée, et dans les conditions régies par les textes : placement familial, placement familial spécialisé, placement thérapeutique, placement social, placement judiciaire. 
+<br/>   
+**PMI** (Protection maternelle et infantile).  
+ Elle relève du conseil général et s'adresse aux futurs parents, aux femmes enceintes, aux enfants jusqu'à l'âge de six ans. Elle a pour but d'assurer la bonne santé de ces populations.   
+ <br/>   
+**PPS** (Projet personnalisé de scolarisation)   
+Instauré par l'article 19 de la loi n° 2005-102 du 11 février 2005, en remplacement du PIIS, le PPS, sous l'autorité de la MDPH, organise la scolarisation des enfants et adolescents handicapés en proposant des modalités de déroulement de la scolarité coordonnées avec les mesures permettant l'accompagnement de celle-ci fgurant dans le plan de compensation.   
+<br/>   
+**RASED** (Réseau d'Aides Spécialisées aux Elèves en Difculté)  
+
+Les RASEDdispensent des aides spécialisées aux élèves d'écoles maternelles et élémentaires en grande difculté. Ces aides sont pédagogiques ou rééducatives. Elles complètent les aides personnalisées mises en place en 2008 et les stages de remise à niveau pendant les vacances scolaires.   
+<br/>   
+**REAAP** (Réseaux d'écoute, d'aide et d'appui aux parents)   
+Nés en 1999, sous l'égide des pouvoirs publics, dans un contexte où les parents sont parfois jugés inopérants à assurer la structuration des enfants, ces réseaux ont pour mission d'appuyer les parents dans le domaine éducatif en tenant compte des problématiques nouvelles : violences, défaut d'autorité, manque de repères, manque de dialogue intra familial.   
+<br/>   
+**Régie de quartier** Une régie de quartier regroupe collectivités locales, logeurs sociaux et habitants du ou des quartiers qui composent son territoire. Ensemble, ils interviennent sur la gestion urbaine de cet espace géographique et social sur lequel se fonde son action. Sa mission technique est d'entretenir, d'embellir et de veiller sur le quartier. Elle se traduit par une activité économique qui favorise l'insertion sociale et professionnelle d'habitants en difculté et l'émergence de nouveaux services.   
+<br/>   
+**RMI** 
+Revenu minimum d'insertion devient RSA. 
+<br/>   
+**RNSP** (Réseau national de santé publique) (L'InVS succède au RNSP)    
+Réseau constitué de médecins sentinelles répartis sur l'ensemble du territoire. Ceux-ci alertent l'INVS chaque fois qu'ils estiment qu'il peut y avoir un risque : survenue d'une maladie infectieuse, réaction inhabituelle à un médicament...   
+<br/>   
+**RSA** (Revenu de solidarité active).  
+Remplace le revenu minimum d'insertion (RMI), l'allocation de parent isolé (API) et certaines aides forfaitaires temporaires comme la prime de retour à l'emploi).
+C'est une allocation destinée à garantir à ses bénéfciaires, qu'ils soient ou non en capacité de travailler, un revenu minimum, avec en contrepartie une obligation de chercher un travail ou de défnir et suivre un projet professionnel.   
+Voir le site du RSA.  
+ <br/>                                        
+                                      
+**SAAD** (Service d'aide et d'accompagnement à domicile)
+
+   Le Service d'Aide et d'Accompagnement favorise le maintien à domicile des personnes par une aide et un accompagnement à l'autonomie.
+SAAAIS (Service d'aide à l'acquisition de l'autonomie et à l'intégration scolaire)
+Le Service d'Aide à l'Acquisition de l'Autonomie et à l'Intégration Scolaire fait partie des SESSAD et il est spécialisé dans l'accompagnement d'enfants, d'adolescents et de jeunes adultes aveugles ou mal voyants, orientés par la Maison Départementale des Personnes Handicapées défcients visuels.
+<br/>   
+**SAFEP** (Service d'accompagnement familial et d'éducation précoce).  
+Le Service d'Accompagnement Familial et d'Education précoce est une appellation des SESSAD et il est spécialisé dans l'accompagnement d'enfants défcients sensoriels de 0 à 3ans.
+
+<br/>   
+**SAMETH** (Services d'Appui pour le Maintien dans l'Emploi des Travailleurs Handicapés)   
+
+Le Service d'appui au maintien dans l'emploi des travailleurs handicapés aide les entreprises et les salariés handicapés à assurer le maintien dans l'emploi.   
+<br/>   
+**SAMSAH** (Service d'accompagnement médico-social pour adultes handicapés)   
+Le Service d'Accompagnement Médico-Social pour Adultes Handicapés est un accompagnement médico-social adapté comportant des prestations de soins. Il accompagne les adultes handicapés dans leur projet de vie tout en favorisant les liens familiaux, sociaux, scolaires, professionnels.   
+<br/>   
+**SAPAD** (Service d'assistance pédagogique à domicile)   
+Les Services d'assistance pédagogique à domicile sont des dispositifs départementaux de l'Éducation nationale destinés à fournir aux enfants et adolescents atteints de troubles de la santé ou accidentés une prise en charge pédagogique au domicile.  
+<br/>   
+**SAU** (Service d'accueil et de traitement des urgences)   
+Le SAU est un service hospitalier qui accueille et traite toutes les urgences sans sélection. Les SAU sont ouverts 24 heures sur 24, 7 jours sur 7.
+<br/>   
+**Sauvegarde de justice**
+Un majeur peut-être placé sous un régime de protection judiciaire tout en conservant l'exercice de ses droits. En raison d'une altération de ses facultés personnelles, il a besoin d'être protégé dans les actes de la vie civile.
+<br/>   
+**SAVS** (Service d'accompagnement à la Vie Sociale).  
+
+
+Ils ont pour mission de favoriser l'insertion et le maintien en milieu ordinaire de vie d'adultes handicapés, en leur assurant un accompagnement adapté pour favoriser le maintien ou la restauration de leurs liens familiaux, sociaux et professionnels et pour faciliter leur accès à l'ensemble des services oferts par la collectivité. Leurs missions sont proches de celles des SAMSAH, mais sans prestations de soins.
+<br/>   
+**SAVU** (Service d'aide aux victimes en urgence)   
+Ce service accueille, soutien et écoute les victimes d'infraction (vole, agression sexuelle...)   
+<br/>   
+**SCAPH** Service Conseil Autonomie pour Personnes Handicapées physiques et sensorielles.   
+<br/>   
+**SEAT** (Service éducatif auprès du tribunal)   
+Ces services assurent la permanence éducative auprès du tribunal. A chaque fois qu'un mineur délinquant est présenté devant le juge, ils sont saisis pour présenter une proposition éducative.
+<br/>   
+**SEES** (Section d'éducation et d'enseignement spécialisés)   
+
+Dans les IME, c'est la section destinée aux plus jeunes. Une section d'éducation et d'enseignement spécialisés assurant les apprentissages scolaires, le développement de la personnalité et la socialisation des enfants. La pratique éducative s'appuie sur les méthodes actives. Elle est complétée par une section destinée aux adolescents, la SIPFPro.   
+<br/>   
+**SEGPA** (Section d'enseignement général et professionnel adapté)   
+Au collège, les sections d'enseignement général et professionnel adapté accueillent des élèves présentant des difcultés d'apprentissage graves et durables. Les élèves suivent des enseignements adaptés qui leur permettent à la fois d'acquérir les connaissances et les compétences du socle commun, de construire progressivement leur projet de formation et de préparer l'accès à une formation diplômante.   <br/>   
+**SEJE** (Soutien à l'emploi des jeunes en entreprises) ou Contrat jeune en entreprise (CJE)   
+Le Soutien à l'emploi des jeunes en entreprise vise, par le versement à l'employeur d'une aide forfaitaire de l'État, à favoriser l'embauche en contrat à durée indéterminée de jeunes éloignés de l'emploi.   
+<br/>   
+**SES** (Section d'éducation spécialisée)   
+Remplacés par les SEGPA.
+ <br/>                            
+**SESSAD** (Service d'éducation spéciale et de soins à domicile)   
+Ce service dispense un accompagnement éducatif et des soins au domicile familial d'enfants et d'adolescents handicapés, mais aussi dans les crèches, des placements familiaux ou dans les écoles. Les enfants sont admis sur décision de la CDAPH. Les prestations sont prises en charge par la Sécurité sociale. Leurs interventions passent par l'établissement d'un PPS.   
+<br/>   
+**Service de suite, service d'accompagnement**
+Ces services ont une fonction de relais entre les établissements et le milieu ordinaire. Ils apportent un soutien aux personnes handicapées en vue de faciliter leur accès à une vie professionnelle et sociale stable. Ils aident à la sortie de jeunes handicapés d'IME et les suivent dans le cadre d'un hébergement autonome ou quasi autonome.  
+<br/>   
+**SIDVA** (Service d'intégration pour les défcients visuels et aveugles)   
+Les SIDVA sont des services de type SESSAD pour enfants et adolescents défcients visuels ou aveugles.   
+<br/>   
+**SIPFP** OU **SIPFPro** (Section d'initiation et de première formation professionnelle)   
+Dans les IME, c'est la section destinée aux adolescents.    
+**SMIC** Salaire minimum interprofessionnel de croissance.  
+<br/>   
+**SMPR** (Service médico-psychologique régional)   
+Les services médico-psychologiques régionaux sont des unités de soins implantées dans des établissements pénitentiaires. Ils permettent d'assurer le dépistage des troubles psychiatriques, de répondre à toutes les demandes de soins exprimées, de contenir et d'intervenir auprès des patients qui présentent des troubles graves de la personnalité.   
+<br/>   
+**SSEFIS** (Service de soutien à l'éducation familiale et à l'intégration scolaire)   
+Les SSEFIS interviennent auprès d'enfants défcients auditifs âgés de trois ans à vingt ans en intégration scolaire et de leur famille. Pour les moins de trois ans, voir SAFEP.
+  <br/>   
+**TDAH** Trouble de défcit d'attention/hyperactivité.  
+<br/>   
+**TED** Troubles envahissants du développement.   
+<br/>   
+**Territoire de vie sociale**
+Le département est organisé en Territoires de Vie Sociale. En un même lieu, il est possible d'obtenir des réponses sur cinq domaines d'intervention : Enfance et Famille, Logement, Personnes handicapées, Personnes âgées, Lutte contre l'exclusion. Ils sont remplacés le 1er février 2012 par les Maisons départementales de solidarité.   
+<br/>   
+**TH** Travailleur handicapé.  
+<br/>   
+**TPMO** Travail Protégé en Milieu Ordinaire.   
+<br/>   
+**TSA** Troubles spécifques des apprentissages.   
+<br/>   
+**TSL** Troubles spécifques du langage.  
+<br/>   
+**Tutelle aux majeurs protégés**
+Régime de protection sous lequel peut être placé un majeur. Il protège des personnes adultes, (malades mentaux, handicapées, personnes âgées), ne pouvant exercer seules leurs droits en raison d'une altération de leurs facultés personnelles et ayant besoin d'être représentées d'une manière continue dans tous les actes de la vie civile. C'est un régime d'incapacité complète. Le majeur protégé perd ses droits civiques. Le juge désigne un tuteur pour gérer son patrimoine et ses revenus.
+Voir aussi Curatelle et .Sauvegarde de justice
+                                <br/>   
+**UDAPEI** Union départementale d'associations de parents d'enfants inadaptés.   
+<br/>   
+**ULE** (Unité locale d'enseignement)  
+Les Unités locale d'enseignement permettent de structurer l'enseignement en milieu pénitentiaire. L'enseignement est dispensé dans les établissements pénitentiaires en vue de donner au public détenu les meilleures chances de formation et de réinsertion professionnelle.   
+<br/>   
+**ULIS** (Unité localisée pour l'inclusion scolaire).  
+C'est la nouvelle appellation des UPI. Les ULIS reprennent la fonction des UPI. Elles constituent une des modalités de mise en œuvre de l'accessibilité pédagogique pour les élèves handicapés. Elles proposent, en milieu scolaire ordinaire, des possibilités d'apprentissages souples et diversifées.   
+<br/>   
+**UMD** (Unités pour malades difciles)   
+Les UMD sont des établissements psychiatriques sécurisés où l'on prend en charge les patients atteints de pathologies mentales aiguës, en tout cas qui présentent des troubles du comportement graves incompatibles avec leur maintien en service de psychiatrie classique (les auteurs de crime ou délit jugés irresponsables et qui ne peuvent donc pas être emprisonnés, les détenus perturbés sur le plan psychologique qui refusent tout traitement, les malades psychotiques que les hôpitaux refusent en raison le plus souvent de leur dangerosité).   
+<br/>   
+**UNAFORIS** (Union nationale des associations de formation et de recherche en intervention sociale).  
+Voir le site de l'UNAFORIS   
+<br/>   
+**UNAPEI** Union nationale des associations de parents et amis de personnes handicapées mentales.  
+
+Voir le site de l'UNAPEI.  
+
+<br/>   
+**UPI** Unité pédagogique d'intégration. Devient ULIS. USLD (Unité de soins longue durée). 
+L'USLD, unité de soins longue durée, est un établissement sanitaire destiné à l'hébergement des personnes âgées ayant perdu leur autonomie et dont l'état nécessite une surveillance et des soins médicaux constants.   
+<br/>   
+**VAE** (Validation des acquis de l'expérience)   
+Possibilité légale d'acquérir un titre en faisant reconnaître l'expérience que l'on a acquise soit dans le travail, soit dans un autre cadre comme le bénévolat, le syndicalisme ou la famille. Cette reconnaissance d'expérience, validée par les professionnels, dispense d'efectuer tout ou partie de la formation qui serait nécessaire à l'acquisition du titre.   
+<br/>   
+**Village d'enfants**
+Ils reconstituent des familles stables autour de quelques "mères" choisies et formées pour prendre en charge des enfants orphelins ou n'ayant pas d'attache familiale étroite et appartenant à des fratries que l'on ne veut pas dissocier. Aujourd'hui, les villages se composent de six à huit maisons d'environ huit enfants. Les mères prennent un engagement pour toute la durée de l'éducation des enfants.   
+<br/>   
+**VAD**
+Visite à Domicile.
+    <br/>   
+**ZEP** Zone d'éducation prioritaire.   
+<br/>   
+**ZRU** Zone de redynamisation Urbaine   
+<br/>   
+**ZUP** Zone à urbaniser en priorité ou zone d'urbanisation prioritaire.
+
+
+Secours Catholique au Pays Basque {} 
+==============================================================================
+Services et adresses du Secours Catholique dans la région
+ 
+## 
+### **Le Secours Catholique au Pays Basque**{data-height=500}    
+```{r}
+
+lieux<- read.csv2("lieux.csv")
+
+lie<-reactable(lieux)
+lie
+```
+
+
+
+
+
+### **OUVERTURE DU GRENIER (Bayonne)** {data-height=200}   
+```{r, height=200}
+
+perSC<- read.csv2("permanencesSC.csv")
+
+ perG<-subset(perSC, select = c(Activité,Jour, apres.midi) )
+perG<-reactable(perG[10:11,])
+perG
+```
+
+### **OUVERTURE BOUTIQUE SOLIDAIRE (Bayonne)** {data-height=300}   
+**La Boutique Solidaire** s'adresse au familles et personnes à faibles revenus.      
+On y trouve des habits et autres produits à des prix modiques.    
+
+
+```{r, height=200}
+perS<-subset(perSC, select = c(Jour, apres.midi) )
+perS<-reactable(perS[7:9,])
+
+perS
+
+```
+
+
+
+## AUTRES ACTIVITES A BAYONNE   
+
+
+### **SOUTIEN SCOLAIRE rue Argote (Vacances scolaires)** {data-height=200}   
+```{r, height=200}
+per<-subset(perSC, select = c(Activité,Jour, apres.midi) )
+sout<-reactable(per[12,])
+
+sout
+
+```
+
+
+### **APPRENTISSAGE DU FRANCAIS rue Argote (Sauf vacances scolaires)**.{data-height=300}  
+```{r, height=200}
+per<-subset(perSC, select = c(Jour, matin, apres.midi) )
+sout<-reactable(per[13:15,])
+
+sout
+
+```
+
+
+
+
+### **PERMANENCES AMA rue Argote**{data-height=200}
+
+```{r, height=200}
+per<-subset(perSC, select = c(Jour, apres.midi) )
+ama<-reactable(per[19,])
+
+ama
+
+```
+
+
+### **AUTRES ACTIVITES*** {data-height=300}
+
+```{r, height=200}
+autres<-subset(perSC, select = c(Activité,Jour) )
+autr<-reactable(autres[16:18,])
+
+autr
+
+```
+
+
+
+-- Vestiaires,       
+ --  Adressage,         
+ --  Bagagerie,  
+ -- Micro-credits.  
+ -- Apprentissage du Francais   
+ -- Infirmiere PASS et psicologue (une fois par semaine).    
